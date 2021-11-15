@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-
-import GetUsers from "../../services/usersService";
+import UserType from '../../services/userType'
+import {Modal,Typography,Button,Box} from "@mui/material"
 
 const style = {
   position: "absolute" as "absolute",
@@ -18,8 +14,8 @@ const style = {
   p: 4,
 };
 
-export default function ModalUsers(usersData: any) {
-  const [open, setOpen] = React.useState(false);
+export default function Modaluser(props:{user:UserType}) {
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -34,34 +30,34 @@ export default function ModalUsers(usersData: any) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Name:{usersData.children.name}
+            Name:{props.user.name}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Username: {usersData.children.username}
+            Username: {props.user.username}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Email: {usersData.children.email}
+            Email: {props.user.email}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Phone: {usersData.children.phone}
+            Phone: {props.user.phone}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Website: {usersData.children.website}
+            Website: {props.user.website}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Address
+            Address 
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Street: {usersData.children.address.street}
+            Street: {props.user.address.street}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Suite: {usersData.children.address.suite}
+            Suite: {props.user.address.suite}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            City: {usersData.children.address.city}
+            City: {props.user.address.city}
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Zipcode: {usersData.children.address.zipcode}
+            Zipcode: {props.user.address.zipcode}
           </Typography>
         </Box>
       </Modal>
