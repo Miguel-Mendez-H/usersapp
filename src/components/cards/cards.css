@@ -1,0 +1,22 @@
+.singleCard{
+    display:inline-block;
+    margin: 2%;
+    min-width: 300px;
+    min-height: 270px;
+    max-width: 300px;
+    max-height: 270px;
+    
+}
+
+.MuiBackdrop-root{
+    background-color: transparent;
+}
+
+.MuiCardContent-root.css-46bh2p-MuiCardContent-root{
+    text-align-last: left;
+}
+
+
+.MuiTypography-root{
+    margin-bottom: 0px;
+}
